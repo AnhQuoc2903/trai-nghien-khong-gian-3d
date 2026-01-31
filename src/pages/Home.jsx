@@ -5,22 +5,22 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <div style={styles.container}>
-      <img src="/LOGO.png" alt="Logo" style={styles.logo} />
-      <h1 style={styles.title}>TRẢI NGHIỆM KHÔNG GIAN 3D</h1>
+    <div style={styles.container} className="home-container">
+      <h1 style={styles.title} className="home-title">
+        TRẢI NGHIỆM KHÔNG GIAN 3D
+      </h1>
 
-      <div style={styles.grid}>
+      <div style={styles.grid} className="home-grid">
         {tours.map((t) => (
           <div
             key={t.id}
-            onClick={() => navigate(`/view/${t.id}`)}
             style={styles.card}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = "scale(1.05)")
-            }
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+            className="home-card"
+            onClick={() => navigate(`/view/${t.id}`)}
           >
-            <div style={styles.icon}>{t.icon}</div>
+            <div style={styles.icon} className="home-icon">
+              {t.icon}
+            </div>
             <div style={styles.cardTitle}>{t.title}</div>
             <div style={styles.cardSub}>Xem tham quan 3D</div>
           </div>

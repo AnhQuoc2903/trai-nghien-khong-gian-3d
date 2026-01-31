@@ -13,3 +13,71 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+/* =====================
+   RESPONSIVE HOME
+===================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .home-container {
+    padding: 40px 40px !important;
+  }
+
+  .home-title {
+    font-size: 28px !important;
+  }
+
+  .home-grid {
+    gap: 24px !important;
+  }
+
+  .home-card {
+    padding: 40px 20px !important;
+  }
+
+  .home-icon {
+    font-size: 40px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 24px 20px !important;
+  }
+
+  .home-title {
+    font-size: 22px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .home-card {
+    padding: 30px 20px !important;
+    border-radius: 16px !important;
+  }
+
+  .home-icon {
+    font-size: 36px !important;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .home-title {
+    font-size: 18px !important;
+  }
+
+  .home-card {
+    padding: 24px 16px !important;
+  }
+
+  .home-icon {
+    font-size: 32px !important;
+  }
+}
