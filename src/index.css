@@ -5,8 +5,9 @@
 body {
   margin: 0;
   font-family: "Inter", system-ui, sans-serif;
-  background: #0e0e11;
+  background: #0a0a0f;
   color: #ffffff;
+  overflow-x: hidden;
 }
 
 a {
@@ -14,18 +15,61 @@ a {
   color: inherit;
 }
 
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(41, 98, 255, 0.3);
+  color: #fff;
+}
+
 /* =====================
-   RESPONSIVE HOME
+   RESPONSIVE HOME - CĂN GIỮA
 ===================== */
 
-/* Tablet */
+/* Mặc định - Desktop lớn */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 320px); /* 3 card ngang */
+  gap: 30px;
+  justify-content: center; /* 🔥 CĂN GIỮA */
+  margin: 0 auto; /* 🔥 CĂN GIỮA */
+  width: fit-content; /* 🔥 TỰ ĐỘNG CO GIÃN */
+}
+
+/* Desktop rất lớn (có thể 4 card) */
+@media (min-width: 1600px) {
+  .home-container {
+    padding: 60px 40px 80px !important;
+  }
+
+  .home-grid {
+    grid-template-columns: repeat(3, 320px) !important; /* Vẫn giữ 3 card */
+  }
+}
+
+/* Tablet landscape (2 card ngang) */
+@media (max-width: 1200px) {
+  .home-title {
+    font-size: 40px !important;
+  }
+
+  .home-grid {
+    grid-template-columns: repeat(2, 320px) !important;
+  }
+}
+
+/* Tablet (2 card ngang) */
 @media (max-width: 1024px) {
   .home-container {
-    padding: 40px 40px !important;
+    padding: 30px 20px 50px !important;
   }
 
   .home-title {
-    font-size: 28px !important;
+    font-size: 36px !important;
   }
 
   .home-grid {
@@ -33,51 +77,117 @@ a {
   }
 
   .home-card {
-    padding: 40px 20px !important;
+    padding: 24px !important;
   }
 
-  .home-icon {
-    font-size: 40px !important;
+  .home-icon div {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 32px !important;
+  }
+
+  .description {
+    font-size: 16px !important;
+    padding: 0 20px !important;
   }
 }
 
-/* Mobile */
+/* Mobile landscape (1 card) */
 @media (max-width: 768px) {
   .home-container {
-    padding: 24px 20px !important;
+    padding: 24px 16px 40px !important;
   }
 
   .home-title {
-    font-size: 22px !important;
-    margin-bottom: 30px !important;
+    font-size: 32px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .subtitle {
+    font-size: 14px !important;
+    letter-spacing: 2px !important;
   }
 
   .home-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 320px !important; /* 1 card, căn giữa */
     gap: 20px !important;
   }
 
   .home-card {
-    padding: 30px 20px !important;
-    border-radius: 16px !important;
+    padding: 20px !important;
+    border-radius: 20px !important;
   }
 
-  .home-icon {
-    font-size: 36px !important;
+  .home-icon div {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 28px !important;
+  }
+
+  .cardTitle {
+    font-size: 20px !important;
+  }
+
+  .badgeContainer {
+    flex-wrap: wrap !important;
+  }
+
+  .logoText {
+    font-size: 20px !important;
   }
 }
 
-/* Small mobile */
+/* Mobile nhỏ */
 @media (max-width: 480px) {
   .home-title {
-    font-size: 18px !important;
+    font-size: 28px !important;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr !important; /* Chiếm full width */
+    max-width: 320px !important;
+    margin: 0 auto !important;
   }
 
   .home-card {
     padding: 24px 16px !important;
+    width: 100% !important; /* Chiếm full width */
   }
 
-  .home-icon {
-    font-size: 32px !important;
+  .home-icon div {
+    width: 56px !important;
+    height: 56px !important;
+    font-size: 24px !important;
+  }
+
+  .description {
+    font-size: 15px !important;
+  }
+
+  .footerText {
+    font-size: 13px !important;
+  }
+}
+
+/* Mobile rất nhỏ */
+@media (max-width: 360px) {
+  .home-title {
+    font-size: 24px !important;
+  }
+
+  .home-grid {
+    max-width: 280px !important;
+  }
+
+  .home-card {
+    padding: 20px 16px !important;
+  }
+
+  .cardTitle {
+    font-size: 18px !important;
+  }
+
+  .logoText {
+    font-size: 18px !important;
   }
 }
