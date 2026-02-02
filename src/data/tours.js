@@ -26,7 +26,7 @@ export const tours = [
   {
     id: "ar-polycam-2",
     title: "AR Mô hình 2",
-    icon: "📱",
+    icon: "🧊",
     url: "https://poly.cam/capture/782aa845-03fd-42b2-b152-cb39aecb7835",
   },
 ];
